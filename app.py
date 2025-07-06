@@ -5,6 +5,7 @@ from datetime import date, datetime
 st.set_page_config(page_title="Smart Study Scheduler", layout="wide")
 st.title("📅 Smart Study Scheduler")
 
+
 # 🧠 Track number of tasks dynamically
 if "task_count" not in st.session_state:
     st.session_state.task_count = 3
