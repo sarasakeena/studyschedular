@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 from datetime import date, datetime
+API_URL = "http://localhost:8000/generate_schedule"
 
 st.set_page_config(page_title="Smart Study Scheduler", layout="wide")
 st.title("📅 Smart Study Scheduler")
@@ -51,7 +52,7 @@ with st.form("task_form"):
 if submitted:
     with st.spinner("Generating your smart schedule..."):
         try:
-            response = requests.post("http://localhost:8000/generate_schedule",
+            response = requests.post(API_URL,
                                      json={"tasks": task_data, "daily_hours": daily_hours})
             if response.status_code == 200:
                 try:
